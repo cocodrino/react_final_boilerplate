@@ -1,0 +1,1 @@
+export type StatusResponse = 'PENDING' | 'DONE' | 'ERROR';
