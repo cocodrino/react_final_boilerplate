@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {getAsyncValue} from "./counterThunks";
 import {Counter} from "./counterTypes";
+import CounterResponse from "../../../sharedTypes/apiResponse/Counter";
 
 
 const initialState: Counter = {
-    counter : 0,
-    status: "DONE"
+    count : 0,
 };
 
 export const counter = createSlice({
@@ -13,21 +13,23 @@ export const counter = createSlice({
     initialState,
     reducers: {
         increment: (state, action: PayloadAction<number>) => {
-            state.counter = state.counter + action.payload
+            // NOTE it's not necessary {...state,count: state.count + action.payload}
+            state.count = state.count + action.payload
         },
 
         subtract: (state, action: PayloadAction<number>) => {
-            state.counter = state.counter - action.payload
+            state.count = state.count - action.payload
         },
     },
 
     extraReducers: {
-        [getAsyncValue.fulfilled.type]: (state, action: PayloadAction<string>) => {
-            console.log('full ', action.payload);
-            state.counter += action.payload.length;
+        [getAsyncValue.fulfilled.type]: (state, action: PayloadAction<CounterResponse>) => {
+            console.log('received value ', action.payload);
+            state.count = action.payload.count;
+            state.status = 'DONE'
             return state
         },
-        [getAsyncValue.rejected.type]: (state, action: PayloadAction<number>) => {
+        [getAsyncValue.rejected.type]: (state, action: PayloadAction<CounterResponse>) => {
             console.log('rejecting ', action.payload);
             return state;
         },

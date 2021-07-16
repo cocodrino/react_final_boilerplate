@@ -1,6 +1,6 @@
 import {StatusResponse} from "../../../sharedTypes/StatusResponse";
 
 export interface Counter{
-    counter : number;
-    status : StatusResponse;
+    count : number;
+    status? : StatusResponse;
 }
