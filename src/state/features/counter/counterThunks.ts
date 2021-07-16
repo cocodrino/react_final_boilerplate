@@ -1,7 +1,7 @@
 // async operations without thunk, can be useful in rejected responses
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios, { AxiosResponse } from "axios";
-import CounterResponse from "../../../sharedTypes/apiResponse/Counter";
+import CounterResponse from "../../../shared/types/apiResponse/Counter";
 
 export const getAsyncValue = createAsyncThunk(
     'user/getAsyncValue',

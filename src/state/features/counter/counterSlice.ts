@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {getAsyncValue} from "./counterThunks";
 import {Counter} from "./counterTypes";
-import CounterResponse from "../../../sharedTypes/apiResponse/Counter";
+import CounterResponse from "../../../shared/types/apiResponse/Counter";
 
 
 const initialState: Counter = {

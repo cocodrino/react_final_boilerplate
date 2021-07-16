@@ -1,5 +1,5 @@
 import {fireEvent, render, screen, waitFor} from '@testing-library/react';
-import wrapComponent from "../../resources/react_testing/wrapper";
+import wrapComponent from "../../shared/resources/react_testing/wrapper";
 import SamplePage from "./SamplePage";
 import {setupServer} from "msw/node";
 import {handlers} from "../../mocks/handlers";

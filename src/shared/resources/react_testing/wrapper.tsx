@@ -3,7 +3,7 @@ import React, { ComponentType, ReactElement } from 'react';
 import { Provider } from 'react-redux';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router';
-import { reducer } from '../../state/store';
+import { reducer } from '../../../state/store';
 
 export const makeStore = (): Store => configureStore({ reducer });
 const history = createMemoryHistory();
