@@ -1,18 +1,3 @@
-# Reglas
-1) Rutas van dentro de App.tsx, <Routes> **SOLO** debe apuntar a componentes creados dentro de
-pages, no se deben colocar rutas a componentes que no están dentro de page y con el sufijo Page, ej:
-
-- /pages/index/IndexPage.tsx correcto
-- /pages/Componente.tsx **incorrecto** debe tener el sufijo Page e ir dentro de su propia carpeta
-
-2) los test unitarios de componentes deben tener el mismo nombre del componente, con la extensión de test
-y deben estar ubicados en la misma carpeta que el componente que testean
-3) si un componente se utiliza en varias páginas, puede ser colocado en *sharedComponents*
-separado por carpetas
-4) *resources* incluye recursos externos, scripts útiles, que pueden ser usado en varios lugares
-5) los componentes de estilo siempre comienzan por la letra S
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
