@@ -49,7 +49,25 @@ describe("In the SamplePage",()=>{
     })
 
 
-    it("when click on the button increase the counter",()=>{
-        test.todo("pass increase")
+    it("when click on the button increase the counter",async ()=>{
+        // test.todo("pass increase")
+
+        await waitFor(()=>{
+            // waitFor going to loop and run the callback until expect doesn't cause an exception
+            const count = document.getElementById("count")?.textContent
+            expect(count).not.toBeUndefined()
+        },{interval:1000,timeout:10000})
+
+        const count = document.getElementById("count")?.textContent
+        await screen.getByText(/increment/).click()
+
+        if(count )
+            await waitFor(()=>{
+                // waitFor going to loop and run the callback until expect doesn't cause an exception
+                const newCount = document.getElementById("count")?.textContent
+                // eslint-disable-next-line jest/no-conditional-expect
+                expect(parseInt(newCount||"")).toBe(parseInt(count)+1)
+            },{interval:1000,timeout:10000})
+
     })
 })

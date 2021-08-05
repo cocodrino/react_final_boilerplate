@@ -10,7 +10,7 @@ y deben estar ubicados en la misma carpeta que el componente que testean
 3) si un componente se utiliza en varias páginas, puede ser colocado en *sharedComponents*
 separado por carpetas
 4) *resources* incluye recursos externos, scripts útiles, que pueden ser usado en varios lugares
-5) 
+5) los componentes de estilo siempre comienzan por la letra S
 
 
 # Getting Started with Create React App
